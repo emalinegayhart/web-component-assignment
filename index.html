@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <todo-list initial-todos='[{"text": "Buy milk", "completed": false}, {"text": "Walk the dog", "completed": true}]'></todo-list>
+
+  <script src="todo-list.js"></script>
+
+  <script>
+    const todoList = document.querySelector('todo-list');
+    todoList.addEventListener('todo-added', (e) => {
+      console.log(`Todo added: ${e.detail}`);
+    });
+    todoList.addEventListener('todo-deleted', (e) => {
+      console.log(`Todo deleted: ${e.detail}`);
+    });
+  </script>
+</body>
+</html>
